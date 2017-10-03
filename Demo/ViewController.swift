@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         
         self.growingTextView.layer.cornerRadius = 4
         self.growingTextView.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        //self.growingTextView.textView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        //self.growingTextView.textView.textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
         self.growingTextView.minNumberOfLines = 1
         
         self.growingTextView.placeholderAttributedText = NSAttributedString(string: "Placeholder text",

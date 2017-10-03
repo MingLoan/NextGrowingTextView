@@ -34,6 +34,8 @@ internal class NextGrowingInternalTextView: UITextView {
   override init(frame: CGRect, textContainer: NSTextContainer?) {
     super.init(frame: frame, textContainer: textContainer)
 
+    self.textContainer.lineFragmentPadding = 0
+    
     NotificationCenter.default.addObserver(self, selector: #selector(NextGrowingInternalTextView.textDidChangeNotification(_ :)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
   }
 

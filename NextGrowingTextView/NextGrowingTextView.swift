@@ -115,7 +115,7 @@ open class NextGrowingTextView: UIScrollView {
 
   public override init(frame: CGRect) {
     
-    _textView = NextGrowingInternalTextView(frame: CGRect(origin: CGPoint.zero, size: frame.size))
+    _textView = NextGrowingInternalTextView(frame: CGRect(origin: CGPoint.zero, size: frame.size), textContainer: nil)
     _previousFrame = frame
 
     super.init(frame: frame)
@@ -125,7 +125,7 @@ open class NextGrowingTextView: UIScrollView {
 
   public required init?(coder aDecoder: NSCoder) {
 
-    _textView = NextGrowingInternalTextView(frame: CGRect.zero)
+    _textView = NextGrowingInternalTextView(frame: CGRect.zero, textContainer: nil)
 
     super.init(coder: aDecoder)
 
@@ -152,7 +152,8 @@ open class NextGrowingTextView: UIScrollView {
 
   private func setup() {
     
-    _textView.textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
+    _textView.contentInset = UIEdgeInsets.zero
+    _textView.textContainerInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     _textView.isScrollEnabled = false
     _textView.font = UIFont.systemFont(ofSize: 16)
     _textView.backgroundColor = UIColor.clear
