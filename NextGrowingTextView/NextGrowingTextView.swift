@@ -47,7 +47,7 @@ open class NextGrowingTextView: UIScrollView {
       return _minNumberOfLines
     }
     set {
-      guard newValue > 1 else {
+      guard newValue > 0 else {
         _minHeight = 1
         return
       }
@@ -151,7 +151,8 @@ open class NextGrowingTextView: UIScrollView {
   }
 
   private func setup() {
-
+    
+    _textView.textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
     _textView.isScrollEnabled = false
     _textView.font = UIFont.systemFont(ofSize: 16)
     _textView.backgroundColor = UIColor.clear

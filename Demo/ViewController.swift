@@ -37,9 +37,12 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        
         self.growingTextView.layer.cornerRadius = 4
         self.growingTextView.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        self.growingTextView.textView.textContainerInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
+        //self.growingTextView.textView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        self.growingTextView.minNumberOfLines = 1
+        
         self.growingTextView.placeholderAttributedText = NSAttributedString(string: "Placeholder text",
                                                                             attributes: [NSAttributedStringKey.font: self.growingTextView.textView.font!,
                                                                                          NSAttributedStringKey.foregroundColor: UIColor.gray
